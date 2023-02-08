@@ -1,6 +1,6 @@
 import discord
 from discord import *
-from bot_information import *
+from token import *
 
 
 class MyClient(discord.Client):
