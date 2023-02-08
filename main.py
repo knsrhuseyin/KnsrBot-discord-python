@@ -5,4 +5,4 @@ if __name__ == '__main__':
     if number == 1:
         print(number)
     else:
-        print(number)
+        print("salut" + number)
