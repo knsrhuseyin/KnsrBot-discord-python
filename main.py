@@ -1,6 +1,6 @@
 import discord
 from discord import *
-from token import *
+from tokenBot import *
 
 
 class MyClient(discord.Client):
@@ -10,7 +10,14 @@ class MyClient(discord.Client):
         print(self.user.id)
         print('------')
         game = discord.Game("Test")
-        await client.change_presence(status=discord.Status.idle, activity=game)
+        await self.change_presence(status=discord.Status.idle, activity=game)
+
+    async def on_message(self, message_content):
+        if message_content.author.id == self.user.id:
+            return
+
+        if message_content.content.startswith("Hello"):
+            await message_content.channel.send("Hello !")
 
 
 intents = discord.Intents.default()
